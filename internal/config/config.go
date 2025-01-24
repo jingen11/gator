@@ -14,8 +14,9 @@ type Config struct {
 }
 
 func getConfigFilePath() string {
-	gp := os.Getenv("GOPATH")
-	ap := path.Join(gp, fileName)
+	homeDir, _ := os.UserHomeDir()
+	// gp := os.Getenv("GOPATH")
+	ap := path.Join(homeDir, fileName)
 	return ap
 }
 
